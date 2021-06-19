@@ -1,5 +1,7 @@
 package be.ehb.voorbeeldexamen.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Future;
@@ -8,6 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
+@JsonIgnoreProperties("owner")
 public class Product {
 
     @Id
@@ -19,7 +22,7 @@ public class Product {
     private double startprijs;
     @Future
     private LocalDateTime eindtijd;
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_id")
     private Persoon owner;
 

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@JsonIgnoreProperties("producten")
 public class Persoon {
 
     @Id
@@ -20,7 +21,6 @@ public class Persoon {
     @NotBlank
     private String email;
     @OneToMany(mappedBy = "owner")
-    @JsonIgnoreProperties("producten")
     private List<Product> producten = new ArrayList<>();
 
     public Persoon() {
