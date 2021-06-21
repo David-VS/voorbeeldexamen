@@ -17,4 +17,39 @@ public class Bod {
     @OneToOne
     @JoinColumn(name = "persoonID")
     private Persoon persoonId;
+
+    public Bod() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getPrijs() {
+        return prijs;
+    }
+
+    public void setPrijs(double prijs) {
+        this.prijs = prijs;
+    }
+
+    public Product getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Product productId) {
+        this.productId = productId;
+    }
+
+    public Persoon getPersoonId() {
+        return persoonId;
+    }
+
+    public void setPersoonId(Persoon persoonId) {
+        this.persoonId = persoonId;
+    }
 }
